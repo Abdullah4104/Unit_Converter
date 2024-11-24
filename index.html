@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: blue;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrap {
+        width: 400px;
+
+        background-color: transparent;
+        background-image: url(./pngtree-minimalistic-white-honeycomb-paper-cut-wind-business-background-image_285722.jpg);
+        box-shadow: 0px 0px 10px rgb(167, 162, 162);
+        margin-top: 80px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        /* display: none; */
+
+    }
+
+    .wrap2 button,
+    .wrap3 button,
+    .wrap4 button,
+    .wrap5 button,
+    .wrap6 button,
+    .wrap7 button,
+    .wrap8 button,
+    .wrap9 button {
+        border-radius: 5px;
+    }
+
+    .wrap2,
+    .wrap3,
+    .wrap4,
+    .wrap5,
+    .wrap6,
+    .wrap7,
+    .wrap8,
+    .wrap9 {
+
+        width: 400px;
+        background-color: white;
+        background-image: url(./modern-clean-white-background-free-vector.jpg);
+        box-shadow: 0px 0px 10px rgb(167, 162, 162);
+        margin-top: 200px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+
+
+    button {
+        width: 300px;
+        padding: 10px;
+        font-size: larger;
+        border: none;
+        border-bottom: 7px solid white;
+        background-color: rgb(182, 177, 177);
+        /* box-shadow: 0px 0px 10px rgb(167, 162, 162); */
+        max-width: 75%;
+        /* box-shadow: 0px 3px 5px; */
+    }
+
+    button:hover {
+        background-color: rgb(127, 127, 245);
+        transform: scale(1.05);
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div id="wrap" class="wrap">
+            <p style=" font-size: 2rem;">Unit Converter</p>
+            <button onclick="distance()">Distance</button>
+            <button onclick="weight()">Weight</button>
+            <button onclick="area()">Area</button>
+            <button onclick="time()">Time</button>
+            <button onclick="power()">Power</button>
+            <button onclick="volume()">Volume</button>
+            <button onclick="speed()">Speed</button>
+            <button onclick="energy()">Energy</button>
+
+        </div>
+
+
+        <!-- distance -->
+        <div id="wrap2" class="wrap2">
+            <p style="text-align: center;font-size: 2rem;">Distance</p>
+            <div style="display: flex; justify-content: space-around; ">
+                <input placeholder="0" id="number"
+                    style="height: 60px; width: 100px; background-color:transparent; outline: none; border: none; font-size: 2.5rem;"
+                    type="number">
+                <select id="selectValue" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="feet">Feet</option>
+                    <option value="cm">Centimeteres</option>
+                    <option value="m">Meters</option>
+                    <option value="inch">Inches</option>
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; ">
+                <p id="conversion"
+                    style="height: 70px; width: 100px; background-color: transparent; font-size: 2.5rem;">0</p>
+                <select id="selectUnit" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="feet">Feet</option>
+                    <option value="cm">Centimeteres</option>
+                    <option value="m">Meters</option>
+                    <option value="inch">Inches</option>
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <button style="width: 150px;" onclick="convert()">Convert </button>
+                <button onclick="back()" style="width: 60px;">back</button>
+
+            </div>
+        </div>
+
+
+        <!-- weight -->
+
+
+        <div id="wrap3" class="wrap3">
+            <p style="text-align: center;font-size: 2rem;">Weight</p>
+            <div style="display: flex; justify-content: space-around; ">
+                <input placeholder="0" id="number2"
+                    style="height: 60px; width: 100px; background-color: transparent; outline: none; border: none; font-size: 2.5rem;"
+                    type="number">
+                <select id="selectValue2" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="kg">Kilograms</option>
+                    <option value="g">grams</option>
+                    <option value="lb">Pounds</option>
+
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; ">
+                <p id="conversion2"
+                    style="height: 70px; width: 100px; background-color: transparent; font-size: 2.5rem;">0</p>
+                <select id="selectUnit2" style=" background-color:transparent; outline: none; border: none;" id="">
+                    <option value="kg">Kilograms</option>
+                    <option value="g">grams</option>
+                    <option value="lb">Pounds</option>
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <button style="width: 150px;" onclick="convert2()">Convert </button>
+                <button onclick="back2()" style="width: 60px;">back</button>
+
+            </div>
+        </div>
+
+
+
+        <!-- area  -->
+
+        <div id="wrap4" class="wrap4">
+            <p style="text-align: center;font-size: 2rem;">Area</p>
+            <div style="display: flex; justify-content: space-around; ">
+                <input placeholder="0" id="number3"
+                    style="height: 60px; width: 100px; background-color:transparent; outline: none; border: none; font-size: 2.5rem;"
+                    type="number">
+                <select id="selectValue3" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="sm">Square metres</option>
+                    <option value="acr">Acres</option>
+                    <option value="hec">Hectares</option>
+                    <option value="sf">square Feet</option>
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; ">
+                <p id="conversion3"
+                    style="height: 70px; width: 100px; background-color: transparent; font-size: 2.5rem;">0</p>
+                <select id="selectUnit3" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="sm">Square metres</option>
+                    <option value="acr">Acres</option>
+                    <option value="hec">Hectares</option>
+                    <option value="sf">square Feet</option>
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <button style="width: 150px;" onclick="convert3()">Convert </button>
+                <button onclick="back3()" style="width: 60px;">back</button>
+
+            </div>
+        </div>
+
+        <!-- time -->
+
+        <div id="wrap5" class="wrap5">
+            <p style="text-align: center;font-size: 2rem;">Time</p>
+            <div style="display: flex; justify-content: space-around; ">
+                <input placeholder="0" id="number4"
+                    style="height: 60px; width: 100px; background-color: transparent; outline: none; border: none; font-size: 2.5rem;"
+                    type="number">
+                <select id="selectValue4" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="hr">Hours</option>
+                    <option value="min">Minutes</option>
+                    <option value="sec">Seconds</option>
+
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; ">
+                <p id="conversion4"
+                    style="height: 70px; width: 100px; background-color: transparent; font-size: 2.5rem;">0</p>
+                <select id="selectUnit4" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="hr">Hours</option>
+                    <option value="min">Minutes</option>
+                    <option value="sec">Seconds</option>
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <button style="width: 150px;" onclick="convert4()">Convert </button>
+                <button onclick="back4()" style="width: 60px;">back</button>
+
+            </div>
+        </div>
+
+
+
+        <!-- power -->
+
+
+
+        <div id="wrap6" class="wrap6">
+            <p style="text-align: center;font-size: 2rem;">Power</p>
+            <div style="display: flex; justify-content: space-around; ">
+                <input placeholder="0" id="number5"
+                    style="height: 60px; width: 100px; background-color: transparent; outline: none; border: none; font-size: 2.5rem;"
+                    type="number">
+                <select id="selectValue5" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="w">Watts</option>
+                    <option value="hp">Horsepower</option>
+
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; ">
+                <p id="conversion5"
+                    style="height: 70px; width: 100px; background-color: transparent; font-size: 2.5rem;">0</p>
+                <select id="selectUnit5" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="w">Watts</option>
+                    <option value="hp">Horsepower</option>
+
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <button style="width: 150px;" onclick="convert5()">Convert </button>
+                <button onclick="back5()" style="width: 60px;">back</button>
+
+            </div>
+        </div>
+
+        <!-- volume  -->
+
+        <div id="wrap7" class="wrap7">
+            <p style="text-align: center;font-size: 2rem;">Volume</p>
+            <div style="display: flex; justify-content: space-around; ">
+                <input placeholder="0" id="number6"
+                    style="height: 60px; width: 100px; background-color: transparent; outline: none; border: none; font-size: 2.5rem;"
+                    type="number">
+                <select id="selectValue6" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="cum">Cubic metres</option>
+                    <option value="l">Litres</option>
+                    <option value="gal">Gallon</option>
+                    <option value="p">Pints</option>
+
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; ">
+                <p id="conversion6"
+                    style="height: 70px; width: 100px; background-color: transparent; font-size: 2.5rem;">0</p>
+                <select id="selectUnit6" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="cum">Cubic metres</option>
+                    <option value="l">Litres</option>
+                    <option value="gal">Gallon</option>
+                    <option value="p">Pints</option>
+
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <button style="width: 150px;" onclick="convert6()">Convert </button>
+                <button onclick="back6()" style="width: 60px;">back</button>
+
+            </div>
+        </div>
+
+
+        <!-- speed  -->
+
+        <div id="wrap8" class="wrap8">
+            <p style="text-align: center;font-size: 2rem;">Speed</p>
+            <div style="display: flex; justify-content: space-around; ">
+                <input placeholder="0" id="number7"
+                    style="height: 60px; width: 100px; background-color: transparent; outline: none; border: none; font-size: 2.5rem;"
+                    type="number">
+                <select id="selectValue7" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="k/h">Kilometre per hour</option>
+                    <option value="m/s">metre per second</option>
+
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; ">
+                <p id="conversion7"
+                    style="height: 70px; width: 100px; background-color: transparent; font-size: 2.5rem;">0</p>
+                <select id="selectUnit7" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="k/h">Kilometre per hour</option>
+                    <option value="m/s">metre per second</option>
+
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <button style="width: 150px;" onclick="convert7()">Convert </button>
+                <button onclick="back7()" style="width: 60px;">back</button>
+
+            </div>
+        </div>
+
+
+
+        <!-- energy  -->
+
+
+
+
+        <div id="wrap9" class="wrap9">
+            <p style="text-align: center;font-size: 2rem;">Energy</p>
+            <div style="display: flex; justify-content: space-around; ">
+                <input placeholder="0" id="number8"
+                    style="height: 60px; width: 100px; background-color: transparent; outline: none; border: none; font-size: 2.5rem;"
+                    type="number">
+                <select id="selectValue8" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="j">Joules</option>
+                    <option value="ca">Calories</option>
+
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; ">
+                <p id="conversion8"
+                    style="height: 70px; width: 100px; background-color: transparent; font-size: 2.5rem;">0</p>
+                <select id="selectUnit8" style=" background-color: transparent; outline: none; border: none;" id="">
+                    <option value="j">Joules</option>
+                    <option value="ca">Calories</option>
+
+                </select>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <button style="width: 150px;" onclick="convert8()">Convert </button>
+                <button onclick="back8()" style="width: 60px;">back</button>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let wrap = document.getElementById('wrap')
+    let wrap2 = document.getElementById('wrap2')
+    let selectValue = document.getElementById('selectValue')
+    let selectUnit = document.getElementById('selectUnit')
+    let conversion = document.getElementById('conversion')
+    let number = document.getElementById('number')
+    let selectValue2 = document.getElementById('selectValue2')
+    let selectUnit2 = document.getElementById('selectUnit2')
+    let conversion2 = document.getElementById('conversion2')
+    let number2 = document.getElementById('number2')
+    let selectValue3 = document.getElementById('selectValue3')
+    let selectUnit3 = document.getElementById('selectUnit3')
+    let conversion3 = document.getElementById('conversion3')
+    let number3 = document.getElementById('number3')
+    let selectValue4 = document.getElementById('selectValue4')
+    let selectUnit4 = document.getElementById('selectUnit4')
+    let conversion4 = document.getElementById('conversion4')
+    let number4 = document.getElementById('number4')
+    let selectValue5 = document.getElementById('selectValue5')
+    let selectUnit5 = document.getElementById('selectUnit5')
+    let conversion5 = document.getElementById('conversion5')
+    let number5 = document.getElementById('number5')
+    let selectValue6 = document.getElementById('selectValue6')
+    let selectUnit6 = document.getElementById('selectUnit6')
+    let conversion6 = document.getElementById('conversion6')
+    let number6 = document.getElementById('number6')
+    let selectValue7 = document.getElementById('selectValue7')
+    let selectUnit7 = document.getElementById('selectUnit7')
+    let conversion7 = document.getElementById('conversion7')
+    let number7= document.getElementById('number7')
+    let selectValue8 = document.getElementById('selectValue8')
+    let selectUnit8 = document.getElementById('selectUnit8')
+    let conversion8 = document.getElementById('conversion8')
+    let number8= document.getElementById('number8')
+    function distance() {
+        wrap.style.display = 'none'
+        wrap2.style.display = 'block'
+    }
+    function weight() {
+        wrap.style.display = 'none'
+        wrap3.style.display = 'block'
+    }
+    function area() {
+        wrap.style.display = 'none'
+        wrap4.style.display = 'block'
+    }
+    function time() {
+        wrap.style.display = 'none'
+        wrap5.style.display = 'block'
+    }
+    function power() {
+        wrap.style.display = 'none'
+        wrap6.style.display = 'block'
+    }
+    function volume() {
+        wrap.style.display = 'none'
+        wrap7.style.display = 'block'
+    }
+    function speed() {
+        wrap.style.display = 'none'
+        wrap8.style.display = 'block'
+    }
+    function energy() {
+        wrap.style.display = 'none'
+        wrap9.style.display = 'block'
+    }
+    function back() {
+        wrap2.style.display = 'none'
+        wrap.style.display = 'flex'
+    }
+    function back2() {
+        wrap3.style.display = 'none'
+        wrap.style.display = 'flex'
+    }
+    function back3() {
+        wrap4.style.display = 'none'
+        wrap.style.display = 'flex'
+    }
+    function back4() {
+        wrap5.style.display = 'none'
+        wrap.style.display = 'flex'
+    }
+    function back5() {
+        wrap6.style.display = 'none'
+        wrap.style.display = 'flex'
+    }
+    function back6() {
+        wrap7.style.display = 'none'
+        wrap.style.display = 'flex'
+    }
+    function back7() {
+        wrap8.style.display = 'none'
+        wrap.style.display = 'flex'
+    }
+    function back8() {
+        wrap9.style.display = 'none'
+        wrap.style.display = 'flex'
+    }
+
+
+    //distance
+    function convert() {
+
+
+        if (selectValue.value === "cm" && selectUnit.value === "inch") {
+            conversion.innerHTML = (number.value * 2.54).toFixed(2)
+        } else if (selectValue.value === "inch" && selectUnit.value === "cm") {
+            conversion.innerHTML = (number.value / 2.54).toFixed(2)
+        } else if (selectValue.value === "cm" && selectUnit.value === "m") {
+            conversion.innerHTML = (number.value / 100)
+        } else if (selectValue.value === "m" && selectUnit.value === "cm") {
+            conversion.innerHTML = number.value * 100
+        } else if (selectValue.value === "inch" && selectUnit.value === "feet") {
+            conversion.innerHTML = (number.value / 12).toFixed(2)
+        } else if (selectValue.value === "feet" && selectUnit.value === "inch") {
+            conversion.innerHTML = number.value * 12
+        } else if (selectValue.value === "cm" && selectUnit.value === "feet") {
+            conversion.innerHTML = (number.value / 30.48).toFixed(2)
+        } else if (selectValue.value === "feet" && selectUnit.value === "cm") {
+            conversion.innerHTML = (number.value * 30.48).toFixed(2)
+        } else if (selectValue.value === "feet" && selectUnit.value === "m") {
+            conversion.innerHTML = (number.value / 3.28).toFixed(2)
+        } else if (selectValue.value === "m" && selectUnit.value === "feet") {
+            conversion.innerHTML = (number.value * 3.28).toFixed
+        } else if (selectValue.value === "inch" && selectUnit.value === "m") {
+            conversion.innerHTML = (number.value / 39.4).toFixed
+        } else if (selectValue.value === "m" && selectUnit.value === "inch") {
+            conversion.innerHTML = (number.value * 39.4).toFixed
+        } else if (selectValue.value === "feet" && selectUnit.value === "feet") {
+            conversion.innerHTML = (number.value * 1).toFixed(2)
+        } else if (selectValue.value === "m" && selectUnit.value === "m") {
+            conversion.innerHTML = number.value * 1
+        } else if (selectValue.value === "cm" && selectUnit.value === "cm") {
+            conversion.innerHTML = number.value * 1
+        } else if (selectValue.value === "inch" && selectUnit.value === "inch") {
+            conversion.innerHTML = number.value * 1
+        }
+
+    }
+
+    //weight
+    function convert2() {
+
+
+        if (selectValue2.value === "g" && selectUnit2.value === "kg") {
+            conversion2.innerHTML = number2.value / 1000
+        } else if (selectValue2.value === "kg" && selectUnit2.value === "g") {
+            conversion2.innerHTML = number2.value * 1000
+        } else if (selectValue2.value === "kg" && selectUnit2.value === "lb") {
+            conversion2.innerHTML = (number2.value * 2.2).toFixed(2)
+        } else if (selectValue2.value === "lb" && selectUnit2.value === "kg") {
+            conversion2.innerHTML = (number2.value / 2.2).toFixed(2)
+        } else if (selectValue2.value === "g" && selectUnit2.value === "lb") {
+            conversion2.innerHTML = (number2.value / 454.54).toFixed(2)
+        } else if (selectValue2.value === "lb" && selectUnit2.value === "g") {
+            conversion2.innerHTML = (number2.value * 454.54).toFixed(2)
+        } else if (selectValue2.value === "lb" && selectUnit2.value === "lb") {
+            conversion2.innerHTML = (number2.value * 1).toFixed(2)
+        } else if (selectValue2.value === "kg" && selectUnit2.value === "kg") {
+            conversion2.innerHTML = (number2.value * 1).toFixed(2)
+        } else if (selectValue2.value === "g" && selectUnit2.value === "g") {
+            conversion2.innerHTML = (number2.value * 1).toFixed(2)
+        }
+    }
+    //area
+    function convert3() {
+        if (selectValue3.value === "sm" && selectUnit3.value === "acr") {
+            conversion3.innerHTML = (number3.value * 0.0002471).toFixed(4)
+        } else if (selectValue3.value === "acr" && selectUnit3.value === "sm") {
+            conversion3.innerHTML = (number3.value / 0.0002471).toFixed(2)
+        } else if (selectValue3.value === "sm" && selectUnit3.value === "hec") {
+            conversion3.innerHTML = (number3.value * 0.0001).toFixed(4)
+        } else if (selectValue3.value === "hec" && selectUnit3.value === "sm") {
+            conversion3.innerHTML = (number3.value / 0.0001).toFixed(2)
+        } else if (selectValue3.value === "sm" && selectUnit3.value === "sf") {
+            conversion3.innerHTML = (number3.value / 10.7639).toFixed(2)
+        } else if (selectValue3.value === "sm" && selectUnit3.value === "sf") {
+            conversion3.innerHTML = (number3.value * 10.7639).toFixed(2)
+        } else if (selectValue3.value === "hec" && selectUnit3.value === "acr") {
+            conversion3.innerHTML = (number3.value / 0.4047).toFixed(2)
+        } else if (selectValue3.value === "acr" && selectUnit3.value === "hec") {
+            conversion3.innerHTML = (number3.value * 0.4047).toFixed(2)
+        } else if (selectValue3.value === "acr" && selectUnit3.value === "sf") {
+            conversion3.innerHTML = (number3.value * 43560).toFixed(2)
+        } else if (selectValue3.value === "sf" && selectUnit3.value === "acr") {
+            conversion3.innerHTML = (number3.value / 43560).toFixed(3)
+        } else if (selectValue3.value === "hec" && selectUnit3.value === "sf") {
+            conversion3.innerHTML = (number3.value * 107639).toFixed(1)
+        } else if (selectValue3.value === "sf" && selectUnit3.value === "hec") {
+            conversion3.innerHTML = (number3.value * 107639).toFixed(3)
+        } else if (selectValue3.value === "hec" && selectUnit3.value === "hec") {
+            conversion3.innerHTML = (number3.value * 1).toFixed(1)
+        } else if (selectValue3.value === "sm" && selectUnit3.value === "sm") {
+            conversion3.innerHTML = (number3.value * 1).toFixed(1)
+        } else if (selectValue3.value === "sf" && selectUnit3.value === "sf") {
+            conversion3.innerHTML = (number3.value * 1).toFixed(1)
+        } else if (selectValue3.value === "acr" && selectUnit3.value === "acr") {
+            conversion3.innerHTML = (number3.value * 1).toFixed(1)
+        }
+    }
+    function convert4 (){
+        if (selectValue4.value === "hr" && selectUnit4.value === "min") {
+            conversion4.innerHTML = (number4.value * 60)
+        } else if (selectValue4.value === "min" && selectUnit4.value === "hr") {
+            conversion4.innerHTML = (number4.value /60).toFixed(2)
+        }else if (selectValue4.value === "hr" && selectUnit4.value === "sec") {
+            conversion4.innerHTML = (number4.value *60*60)
+        }else if (selectValue4.value === "sec" && selectUnit4.value === "hr") {
+            conversion4.innerHTML = (number4.value /3600).toFixed(2)
+        }else if (selectValue4.value === "min" && selectUnit4.value === "sec") {
+            conversion4.innerHTML = (number4.value *60)
+        }else if (selectValue4.value === "sec" && selectUnit4.value === "sec") {
+            conversion4.innerHTML = (number4.value /60).toFixed(2)
+        }else if (selectValue4.value === "min" && selectUnit4.value === "min") {
+            conversion4.innerHTML = (number4.value)
+        }else if (selectValue4.value === "hr" && selectUnit4.value === "hr") {
+            conversion4.innerHTML = (number4.value )
+        }else if (selectValue4.value === "sec" && selectUnit4.value === "sec") {
+            conversion4.innerHTML = (number4.value )
+        }
+    }
+    function convert5 (){
+        if (selectValue5.value === "hp" && selectUnit5.value === "w") {
+            conversion5.innerHTML = (number5.value * 746)
+        } else if (selectValue5.value === "w" && selectUnit5.value === "hp") {
+            conversion5.innerHTML = (number5.value / 746).toFixed(4)
+    }else if (selectValue5.value === "w" && selectUnit5.value === "w") {
+            conversion5.innerHTML = (number5.value)
+    }else if (selectValue5.value === "hp" && selectUnit5.value === "hp") {
+            conversion5.innerHTML = number5.value
+    }
+}
+function convert6 (){
+    if (selectValue6.value === "cum" && selectUnit6.value === "l") {
+            conversion6.innerHTML = (number6.value * 1000)
+        } else if (selectValue6.value === "l" && selectUnit6.value === "cum") {
+            conversion6.innerHTML = (number6.value / 1000).toFixed(3)
+} else if (selectValue6.value === "gal" && selectUnit6.value === "cum") {
+            conversion6.innerHTML = (number6.value / 264.172).toFixed(3)
+}else if (selectValue6.value === "cum" && selectUnit6.value === "gal") {
+            conversion6.innerHTML = (number6.value * 264.172).toFixed(3)
+}else if (selectValue6.value === "cum" && selectUnit6.value === "p") {
+            conversion6.innerHTML = (number6.value * 2113.376).toFixed(3)
+}else if (selectValue6.value === "p" && selectUnit6.value === "cum") {
+            conversion6.innerHTML = (number6.value * 2113.376).toFixed(3)
+}else if (selectValue6.value === "l" && selectUnit6.value === "gal") {
+            conversion6.innerHTML = (number6.value * 0.2642).toFixed(3)
+}else if (selectValue6.value === "gal" && selectUnit6.value === "l") {
+            conversion6.innerHTML = (number6.value /0.2642).toFixed(3)
+}else if (selectValue6.value === "p" && selectUnit6.value === "gal") {
+            conversion6.innerHTML = (number6.value /8).toFixed(2)
+}else if (selectValue6.value === "gal" && selectUnit6.value === "p") {
+            conversion6.innerHTML = (number6.value * 8)
+}else if (selectValue6.value === "l" && selectUnit6.value === "p") {
+            conversion6.innerHTML = (number6.value * 1.845).toFixed(3)
+}else if (selectValue6.value === "p" && selectUnit6.value === "l") {
+            conversion6.innerHTML = (number6.value / 1.845).toFixed(3)
+}else if (selectValue6.value === "gal" && selectUnit6.value === "gal") {
+            conversion6.innerHTML = (number6.value )
+}else if (selectValue6.value === "l" && selectUnit6.value === "l") {
+            conversion6.innerHTML = (number6.value )
+}else if (selectValue6.value === "cum" && selectUnit6.value === "cum") {
+            conversion6.innerHTML = (number6.value )
+}else if (selectValue6.value === "p" && selectUnit6.value === "p") {
+            conversion6.innerHTML = (number6.value )
+}
+}
+function convert7 (){
+    if (selectValue7.value === "k/h" && selectUnit7.value === "m/s") {
+            conversion7.innerHTML = (number7.value * 0.2777777778).toFixed(3)
+        } else if (selectValue7.value === "m/s" && selectUnit7.value === "k/h") {
+            conversion7.innerHTML = (number7.value / 0.2777777778).toFixed(3)
+    }else if (selectValue7.value === "k/h" && selectUnit7.value === "k/h") {
+            conversion7.innerHTML = (number7.value)
+    }else if (selectValue7.value === "m/s" && selectUnit7.value === "m/s") {
+            conversion7.innerHTML = number7.value
+    }
+}
+function convert8(){
+    if (selectValue8.value === "j" && selectUnit8.value === "ca") {
+            conversion8.innerHTML = (number8.value /4.184).toFixed(3)
+        } else if (selectValue8.value === "ca" && selectUnit8.value === "j") {
+            conversion8.innerHTML = (number8.value*4.184).toFixed(3)
+    }else if (selectValue8.value === "ca" && selectUnit8.value === "ca") {
+            conversion8.innerHTML = (number8.value)
+    }else if (selectValue8.value === "j" && selectUnit8.value === "j") {
+            conversion8.innerHTML = number8.value
+    }
+}
+
+</script>
+
+</html>
